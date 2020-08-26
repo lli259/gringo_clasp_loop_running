@@ -1,0 +1,31 @@
+schur_original_xy.lp
+number(1..n). 
+part(1..8).
+{partition(X,Y) : part(Y)}=1 :- number(X).
+:- partition(X,P), partition(Y,P), partition(X+Y,P), X<=Y, number(X),number(Y),part(P).
+
+
+schur_original_xyn.lp
+number(1..n). 
+part(1..8).
+{partition(X,Y) : part(Y)}=1 :- number(X).
+:- partition(X,P), partition(Y,P), partition(X+Y,P), X<=Y, number(X),number(Y),part(P),X+Y<=n.
+
+
+schur_original_xynum.lp
+number(1..n). 
+part(1..8).
+{partition(X,Y) : part(Y)}=1 :- number(X).
+:- partition(X,P), partition(Y,P), partition(X+Y,P), X<=Y, number(X),number(Y),part(P),number(X+Y).
+
+schur_original_xyz.lp
+number(1..n). 
+part(1..8).
+{partition(X,Y) : part(Y)}=1 :- number(X).
+:- partition(X,P), partition(Y,P), partition(Z,P), X<=Y,Y<Z, Z=X+Y, number(X),number(Y),number(Z),part(P).
+
+schur_original_trisum.lp
+number(1..n). 
+part(1..8).
+{partition(X,Y) : part(Y)}=1 :- number(X).
+:- partition(X,P), partition(Y,P), partition(Z,P), trisum(X,Y,Z), X<=Y, Y<Z, part(P).
